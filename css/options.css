@@ -1,0 +1,78 @@
+input[type=checkbox] {
+	transform: scale(1.5); 
+	margin-right: 8px;
+	cursor: pointer;
+}
+
+input[type=number] {
+	margin-right: 8px;
+	margin-left: 8px;
+	width: 50px;
+}
+
+#confirm-cancel,
+#options-save {
+	background-color: #666;
+	border: none;
+	color: white;
+	padding: 5px 24px;
+	cursor:  pointer;
+	margin: 5px;
+}
+
+#confirm-yes,
+#options-reset {
+	background-color: red;
+	border: none;
+	color: white;
+	padding: 5px 24px;
+	cursor:  pointer;
+	margin: 5px;
+}
+
+#confirm-cancel:hover,
+#options-save:hover {
+	background-color: #333;
+}
+
+#confirm-yes:hover,
+#options-reset:hover {
+	background-color: white;
+	color: red;
+}
+
+#save-status {
+	display: none;
+	padding: 10px;
+	background: green;
+}
+
+.disabled {
+	color: grey;
+	font-style: italic;
+}
+
+.disabled input {
+	background-color: grey;
+	cursor: default;
+}
+
+body {
+    background-color: #1B1B1B;
+    color: white;
+    font-family: Meiryo,Hiragino Kaku Gothic Pro W3,Arial,Helvetica Neue,sans-serif;
+    font-size: 100%;
+    user-select: none;
+}
+
+body::-webkit-scrollbar {
+	width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+	background: #1B1B1B;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: white;
+}

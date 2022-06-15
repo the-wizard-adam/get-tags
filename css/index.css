@@ -1,0 +1,120 @@
+.toolbar {
+	background-color: #333;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	border-top: 1px solid #333;
+	user-select: none;
+}
+
+.toolbar-button {
+	background-color: #222;
+	border: none;
+	color: white;
+	float: right;
+	padding: 5px 24px;
+	cursor:  pointer;
+	margin: 5px;
+}
+
+.toolbar-button:hover {
+	background-color: #444;
+}
+
+#toolbar-clear {
+	background-color: red;
+	font-size: 30px;
+	float: right;
+}
+
+#toolbar-clear:hover {
+	background-color: white;
+	color: red;
+}
+
+#toolbar-download {
+	border-right: none;
+	font-size: 30px;
+	float: right;	
+}
+
+.disabled {
+	background-color: #444 !important;
+	color: grey !important;
+	cursor: default;
+}
+
+#select {
+	float: left;
+}
+
+.page-info {
+	font-size: 18px;
+	display: inline-block;
+	padding: 16px 13px;
+	white-space: nowrap;
+	width: 15%;
+}
+
+.empty {
+	font-style: italic;
+}
+
+.empty::after {
+	content: 'No items';
+}
+
+.download-info {
+	display: inline-block;
+	position: relative;
+	top: 0px;
+	font-style: italic;
+	font-size: 16px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 20%;
+}
+
+.download-progress {
+	position: fixed;
+	background-color: #fff;
+	height: 5px;
+	bottom: 50px;
+	left: 0;
+	width: 0%;
+}
+
+.zip-progress {
+	width: 100%;
+	bottom: 60px;
+	position: fixed;
+	display: none;
+}
+
+p {
+	margin-bottom: 3px; 
+	margin-top: 3px;
+	cursor: default;
+}
+
+body {
+    background-color: #1B1B1B;
+    color: white;
+    font-family: Meiryo,Hiragino Kaku Gothic Pro W3,Arial,Helvetica Neue,sans-serif;
+}
+
+body::-webkit-scrollbar {
+	width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+	background: #1B1B1B;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: white;
+}

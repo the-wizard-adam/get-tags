@@ -1,0 +1,130 @@
+.cardcontainer {
+	background-color: #1B1B1B;
+	display: inline-block;
+	/*float: left;*/
+	min-height: 180px;
+	min-width: 150px;
+	text-align: center;
+	vertical-align: middle;
+	margin-bottom: 50px;
+}
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	display: inline-block;
+	margin:  10px;
+	min-width: 150px;
+	position: relative;
+	text-align: center;
+	transition: 0.3s;
+	vertical-align: middle;
+}
+
+.card-media {
+	display: inline-block;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;
+	position: relative;
+	cursor: pointer;
+}
+
+#card-state {
+	float: right;
+	font-weight: bold;
+	cursor: default;
+}
+
+.card-state-1 {
+	color: #ff6200;
+}
+
+.card-state-2 {
+	color: #802bff;
+}
+
+#selected {
+	border: 5px solid white;
+}
+
+#hover:hover .overlay {
+	visibility: visible;
+	opacity: 1;
+}
+
+.select-layer {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
+	pointer-events: auto !important;
+}
+
+
+.container {
+	bottom: 0;
+	display: block;
+	height: 15px;
+	padding: 0px 8px;
+	padding-bottom: 8px;
+	position: relative;
+	text-align: left;
+/*	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;*/
+}
+
+*[id^="filename-el-"] {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;		
+}
+
+.media-container {
+	position: relative;
+}
+
+.media-progress {
+	height: 5px;
+	width: 0%;
+	background-color: white;
+}
+
+.overlay {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s linear;
+	position: absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    background-image: linear-gradient(to bottom,
+    rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    z-index:9999;
+    color:white;
+    transition: 0.3s;
+}
+
+.overlay-button {
+	display: inline-block;
+	line-height: 50px;
+	font-size: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	cursor: pointer;
+}
+
+.overlay-button:hover {
+	text-shadow: 0px 0px 5px #fff;
+}
+
+*[id^="overlay-remove-"]:after {
+	content: "\2716";
+}
+
+#overlay-open:after {
+	content: "\2924";
+}

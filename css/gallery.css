@@ -1,0 +1,200 @@
+.gallery-container {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background-color: #1b1b1b;
+	user-select: none;
+}
+
+.gallery-media {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.gallery-media-progress {
+	height: 5px;
+	width: 0%;
+	background-color: white;
+}
+
+.gt-info-filename {
+	user-select: text !important;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.gallery-toolbar {
+	left: 0;
+	top:  0;
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	background-color: rgba(0, 0, 0, 0.45);
+	text-align: center;
+}
+
+.gt-counter {
+	display: inline-block;
+	font-size: 16px;
+	float: left;
+	padding-left: 20px;
+	padding-top: 15px;
+	vertical-align: middle;
+}
+
+.gt-info {
+	display: inline-block;
+}
+
+.gt-info p {
+	margin: 5px 0 0;
+}
+
+.gt-info h3 {
+	margin-bottom: 0;
+	margin-top: 10px;
+}
+
+a:-webkit-any-link {
+	color: inherit;
+}
+
+.gt-icon {
+	float: right;
+	cursor: pointer;
+	padding: 10px 0;
+	text-align: center;
+	width: 50px;
+	color: #ccc;
+	font-size: 30px !important;
+}
+
+.gt-icon:hover {
+	color: #fff;
+}
+
+.gp-open {
+	position: fixed;
+	font-size: 20px;
+	cursor: pointer;
+	background-color: #111;
+	color: white;
+	padding: 10px 15px;
+	border: none;
+	top: 10%;
+	right: 0;
+}
+
+.gp-open:hover {
+	background-color: #444;
+}
+
+.gallery-panel {
+	height: 500px;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 10%;
+	right: 0;
+	background-color: #111; 
+	overflow-x: hidden;
+	padding-top: 40px;
+	transition: 0.5s;
+}
+
+.panel-open {
+	width: 500px;
+}
+
+.gp-close {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 36px;
+	margin-left: 10px;
+	background-color: #111;
+	color: #ccc;
+	cursor: pointer;
+	border: none;
+}
+
+.gp-close:hover {
+	color: #fff;
+}
+
+.gp-source {
+	position: relative;
+	left: 0;
+	width: 100%;
+	padding: 10px 20px;
+}
+
+.gp-filename {
+	position: relative;
+	left: 0;
+	width: 100%;
+	padding: 10px 20px;
+}
+
+.gp-tags {
+	position: relative;
+	left: 0;
+	width: 100%;
+	padding: 10px 20px;
+	height: 40%;
+}
+
+.gp-save {
+	padding: 20px 20px;
+	margin-top: 20px;
+}
+
+.gallery-panel label {
+	font-size: 16px;
+	font-style: italic;
+	color: #ccc;
+	margin-bottom: 5px;
+	display: block;
+}
+
+.gallery-panel input {
+	border: none;
+	font-size: 16px;
+	background-color: #ccc;
+	font-family: monospace;
+}
+
+.gallery-panel textarea {
+	border: none;
+	font-size: 16px;
+	resize: none;
+	width: 90%;
+	height: 100%;
+	background-color: #ccc;
+	box-sizing: border-box;
+}
+
+.gp-save button {
+	position: absolute;
+	font-size: 36px;
+	padding: 20px;
+	background-color: #252;
+	color: #ccc;
+	cursor: pointer;
+	border: none;
+	width: 90%;
+}
+
+.gp-save button:hover {
+	color: #fff;
+}
+
+.gp-save button:active {
+	background-color: #262;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Get Tags - Options</title>
+		<link rel="stylesheet" type="text/css" href="css/options.css">
+	</head>
+	<script src="src/jquery-3.6.0.min.js"></script>
+	<script type="module" src="src/options.js"></script>
+	<body>
+		<div><h2>Parser</h2></div>
+		<div style="padding-bottom: 20px; padding-left: 20px;">
+			<span><input type="checkbox" id="options-filter">
+				Filter images under certain dimensions (Default: enabled)
+			</span>
+			<div style="margin: 10px 50px">
+				<span class="filter-disableable">
+					Minimum image width:<input type="number" min="0" id="filter-width">px
+				</span>
+			</div>
+			<div style="margin: 10px 50px">
+				<span class="filter-disableable">
+					Minimum image height:<input type="number" min="0" id="filter-height">px
+				</span>
+			</div>
+		</div>
+		<div style="padding-bottom: 20px; padding-left: 20px;">
+			<span><input type="checkbox" id="options-filename">
+				Use original filename for images (Default: disabled)
+			</span>
+		</div>		
+		<div style="padding-bottom: 20px; padding-left: 20px;">
+			<span><input type="checkbox" id="options-largesource">
+				Attempt to get larger source for image (Default: enabled)
+			</span>
+		</div>		
+		<br>
+		<div style="border-top: solid #666 1px"><h2>Index</h2></div>
+		<div style="padding-bottom: 20px; padding-left: 20px;">
+			<span><input type="checkbox" id="options-alttext">
+				Export image alt-text when downloading (Default: enabled)
+			</span>
+		</div>
+		<div style="padding-bottom: 20px; padding-left: 20px;">
+			<span><input type="checkbox" id="options-downloadshelf">
+				Disable chrome download shelf when downloading (Default: disabled)
+			</span>
+		</div>		
+		<br>
+		<div style="padding: 20px 20px 0px;border-top: solid #666 1px;">
+			<button id="options-save">Save changes</button>
+			<button id="options-reset">Reset to default</button>
+			<span id="save-status">Changes saved.</span>
+			<span id="reset-confirm" style="display: none;">
+				Reset all settings to default?
+				<button id="confirm-yes">Confirm</button>
+				<button id="confirm-cancel">Cancel</button>
+			</span>
+		</div>			
+	</body>
+</html>
