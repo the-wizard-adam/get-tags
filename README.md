@@ -1,5 +1,5 @@
 # ![48](https://user-images.githubusercontent.com/31421308/174459711-3a05955a-b444-4423-ae85-36e655bcc5de.png) Get Tags
-A chrome extension which parses a webpage for images and collects them in a custom tab. 
+A chrome extension that parses a webpage for images and collects them in a custom tab. 
 
 # Features
 - Filter images by height and width defined on the options page (default: 100 x 100).
