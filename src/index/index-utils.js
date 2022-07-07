@@ -45,21 +45,17 @@ function imageLoad(url, num, element, progress) {
 
     xmlHTTP.onload = (e) => {
 
-        let     allData = getAllData();
-
+        let allData = getAllData();
         allData.forEach( (index) => {
 
             if(index.num === num) {
 
                 index.filesize = e.total;
-
                 let info_size = e.total < 1000000 ?     (e.total/1000).toFixed(2) + ' KB'  :
                                                         (e.total/1000000).toFixed(2) + ' MB';
-
                 $(`#info_p-${num}`).prepend(`${index.size} - ${info_size}`);
             }
         });
-
         setLocalData('allData', allData);
     };
 

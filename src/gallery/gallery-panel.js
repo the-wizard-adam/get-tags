@@ -1,13 +1,13 @@
 import { getItemData, idNum, getExt } from './gallery-utils.js';
 
-function checkImage(url) {
+function checkImage(url) { 
 
-	let 	img = new Image();
-
-	img.onload = () => { if(this.width > 0) { return true; } }
-	img.onerror = () => { return false; }
-
-	img.src = url;
+	return new Promise( (resolve, reject) => {		
+		let img = new Image();
+		img.onload = () => { resolve(`${img.width} x ${img.height}`); }
+		img.onerror = () => { reject(); }
+		img.src = url;
+	});
 }
 
 function galleryPanelSaveHandler(data) {
@@ -16,39 +16,36 @@ function galleryPanelSaveHandler(data) {
 			newFilename = $('#gp-filename-num').val(),
 			newImage 	= $('#gp-source').val(),
 			textarea 	= $('.gp-tags > textarea').val().replace(/\s/g, ""),
-			tags 		= textarea.split(',');
+			alt 		= textarea.split(',');
 
 	$(`#filename-el-${data.num}`).html(`${newFilename}${data.extension}`);
 	
-	$('.gt-info-filename').html(`${newFilename}${data.extension}`);			
+	$('.gt-info-filename').html(`${newFilename}${data.extension}`);
 
-	allData.forEach( (index) => {
+	for(let i = 0; i < allData.length; i++) {
 
-		if(index.num === data.num) {
+		if(allData[i].num === data.num) {
 
-			index.filename = newFilename;
+			allData[i].filename = newFilename;
+			allData[i].alttext = alt;
+			if(allData[i].image != newImage) {
 
-			index.alttext = alt;
-
-			if(index.image != newImage) {
-
-				if(checkImage(newImage)) {
-
-					index.image = newImage;
-
-					index.extension = getExt(newImage);
-
+				checkImage(newImage)
+				.then((size) => {
+					allData[i].image = newImage;
+					allData[i].extension = getExt(newImage);
+					allData[i].size = size;
 					location.reload();
-
-				} else {
-
+					window.localStorage.setItem('allData', JSON.stringify(allData));
+					return true;
+				})
+				.catch(() => {
 					$('#gp-source').css('background-color', '#c44');
-				}
+					return false;	
+				});
 			}
 		}
-	});
-
-	window.localStorage.setItem('allData', JSON.stringify(allData));
+	};		
 }
 
 function galleryPanelOpenHandler() {
@@ -58,12 +55,6 @@ function galleryPanelOpenHandler() {
 			thisId = $('.current').attr('id'),
 		 	currentData = getItemData(idNum(thisId)),
 		 	alt = "", options ="";
-	
-	// for(let i = 0; i < currentData.imgtags.length; i++) {
-	// 	tags += currentData.imgtags[i];
-	// 	if(i != (currentData.imgtags.length) - 1)
-	// 		tags += ',';
-	// } 	
 
 	$(`.${panel}`).addClass('panel-open');
 
@@ -96,7 +87,6 @@ function galleryPanelOpenHandler() {
 	$(`.${closeButton}`).on('click', () => {		
 
 		$(`.${panel}`).removeClass('panel-open');
-
 		$(`.${panel}`).children().each( function() {
 			$(this).fadeOut(100);
 			$(this).remove();
@@ -105,11 +95,11 @@ function galleryPanelOpenHandler() {
 
 	$('.gp-save > button').on('click', () => {
 
-		galleryPanelSaveHandler(currentData);
+		if(galleryPanelSaveHandler(currentData)) {
 
-		$(`.${panel}`).removeClass('panel-open');
-
-		$(`.${panel}`).html('');
+			$(`.${panel}`).removeClass('panel-open');
+			$(`.${panel}`).html('');			
+		}
 	});
 }
 
