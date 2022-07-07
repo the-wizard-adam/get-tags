@@ -35,9 +35,9 @@ function galleryPanelSaveHandler(data) {
 					allData[i].image = newImage;
 					allData[i].extension = getExt(newImage);
 					allData[i].size = size;
-					location.reload();
 					window.localStorage.setItem('allData', JSON.stringify(allData));
-					return true;
+					location.reload();
+					return false;
 				})
 				.catch(() => {
 					$('#gp-source').css('background-color', '#c44');
@@ -46,6 +46,8 @@ function galleryPanelSaveHandler(data) {
 			}
 		}
 	};		
+	window.localStorage.setItem('allData', JSON.stringify(allData));
+	return true;
 }
 
 function galleryPanelOpenHandler() {
