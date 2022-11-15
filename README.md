@@ -8,4 +8,5 @@ A chrome extension that parses a webpage for images and collects them in a custo
 - Images can be exported in a zip file along with their descriptions/tags.
 
 # How to use
-This extension is pending review on the Chrome Web Store. It can be loaded as an unpacked extension in Chrome by enabling Developer mode. Use Alt+W to grab all images on the page or grab one image with the context menu item.
+Install the extension from the [Chrome Web Store] (https://chrome.google.com/webstore/detail/get-tags/lbejfmmdhjoglhbdihfddpiibfcpaakf). 
+Use Alt+W to grab all images on the page or grab one image with the context menu item.
